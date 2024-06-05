@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/Result")
 public class ResultPage extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Util.ko(request, response);
+//		Util.ko(request, response);
 		System.out.println("럭키");
 		int cnt = Integer.parseInt(request.getParameter("cnt"));
 		String txt = request.getParameter("txt");		
