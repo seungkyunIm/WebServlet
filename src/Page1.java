@@ -17,9 +17,10 @@ public class Page1 extends HttpServlet {
 		ServletOutputStream sos = resp.getOutputStream();
 		PrintStream ps = new PrintStream(sos, true);
 		ps.print("안녕 친구야,반가워");
-		
-		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		}
+
 	}
 }
