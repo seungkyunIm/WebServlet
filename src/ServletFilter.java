@@ -9,12 +9,6 @@ import javax.servlet.ServletResponse;
 
 public class ServletFilter implements Filter {
 
-	
-	@Override
-	public void destroy() {
-		Filter.super.destroy();
-	}
-
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
@@ -25,12 +19,4 @@ public class ServletFilter implements Filter {
 		chain.doFilter(request, response);
 		
 	}
-
-	@Override
-	public void init(FilterConfig filterConfig) throws ServletException {
-		Filter.super.init(filterConfig);
-	}
-
-
-
 }

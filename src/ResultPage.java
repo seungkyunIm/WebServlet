@@ -14,7 +14,16 @@ import javax.servlet.http.HttpServletResponse;
 public class ResultPage extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		Util.ko(request, response);
-		System.out.println("럭키");
+		System.out.println("겟");
+		print(request,response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("포스트");
+		print(request,response);
+	}
+	
+	private void print(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		int cnt = Integer.parseInt(request.getParameter("cnt"));
 		String txt = request.getParameter("txt");		
 		PrintWriter pw = response.getWriter();
@@ -23,22 +32,6 @@ public class ResultPage extends HttpServlet {
 			System.out.println(cnt + "," + txt);
 			pw.append((i+1)+ " "+txt + "</br>");
 		}
+		
 	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		request.setCharacterEncoding("UTF-8");                                // body에 직접 받아오기 때문에 response 가 아닌 request에 먼저 한글 자료를 담는다.
-//		response.setCharacterEncoding("UTf-8");
-//		response.setContentType("text/html; charset=UTF-8");                  // 아래 메소드 공통 사용으로 위에 3줄은 따로 안써줘도 된다.
-//		Util.ko(request, response);
-//		System.out.println("락키");
-//		int cnt = Integer.parseInt(request.getParameter("cnt"));
-//		String txt = request.getParameter("txt");		
-//		PrintWriter pw = response.getWriter();
-//		
-//		for(int i = 0; i < cnt ; i++) {
-//			System.out.println(cnt + "," + txt);
-//			pw.append((i+1)+ " "+txt + "</br>");
-//		}
-	}
-	
 }
