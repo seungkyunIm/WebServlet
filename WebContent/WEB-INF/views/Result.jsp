@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>데이터 출력 화면</title>
-<link rel="icon" href="<%=request.getContextPath()%>/www/img/logo.png" type="image/x-icon">
-<link href="<%=request.getContextPath()%>/www/lib/bootstrap@5.2.3/css/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" href="../../img/logo.png" type="image/x-icon">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <%   // 이영역 안에는 자바처럼 사용 가능 하다.

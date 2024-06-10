@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <title>사용자 등록</title>
 <link rel="icon" href="../../img/logo.png" type="image/x-icon">
-<link href="../../lib/bootstrap@5.2.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<div class="container mt-3">
@@ -40,10 +40,10 @@
 		</form>
 		<div class="d-flex">
 		  <div class="p-2 flex-fill d-grid">
-				<a href="Select.html" class="btn btn-primary">생성</a>
+				<a href="Select" class="btn btn-primary">생성</a>
 		  </div>
 		  <div class="p-2 flex-fill d-grid">
-				<a href="List.html" class="btn btn-primary">취소</a>
+				<a href="List" class="btn btn-primary">취소</a>
 		  </div>
 		</div>
 	</div>
