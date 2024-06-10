@@ -5,7 +5,12 @@
 <meta charset="UTF-8">
 <title>사용자 등록</title>
 <link rel="icon" href="../../img/logo.png" type="image/x-icon">
+<<<<<<< HEAD
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+=======
+<link href="../../lib/bootstrap@5.2.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/www/lib/bootstrap@5.2.3/css/bootstrap.min.css" rel="stylesheet">
+>>>>>>> refs/remotes/origin/master
 </head>
 <body>
 	<div class="container mt-3">

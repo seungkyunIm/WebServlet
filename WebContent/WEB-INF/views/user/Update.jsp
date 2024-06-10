@@ -5,7 +5,12 @@
 <meta charset="UTF-8">
 <title>사용자 수정</title>
 <link rel="icon" href="../../img/logo.png" type="image/x-icon">
+<<<<<<< HEAD
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+=======
+<link href="../../lib/bootstrap@5.2.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/www/lib/bootstrap@5.2.3/css/bootstrap.min.css" rel="stylesheet">
+>>>>>>> refs/remotes/origin/master
 </head>
 <body>
 	<div class="container mt-3">
@@ -43,7 +48,11 @@
 				<a href="Select" class="btn btn-primary">저장</a>
 		  </div>
 		  <div class="p-2 flex-fill d-grid">
+<<<<<<< HEAD
 			<a href="Select" class="btn btn-primary">취소</a>
+=======
+				<a href="Select" class="btn btn-primary">취소</a>
+>>>>>>> refs/remotes/origin/master
 		  </div>
 		</div>
 	</div>
