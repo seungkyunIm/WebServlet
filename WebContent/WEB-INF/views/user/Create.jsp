@@ -5,17 +5,12 @@
 <meta charset="UTF-8">
 <title>사용자 등록</title>
 <link rel="icon" href="../../img/logo.png" type="image/x-icon">
-<<<<<<< HEAD
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-=======
-<link href="../../lib/bootstrap@5.2.3/css/bootstrap.min.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/www/lib/bootstrap@5.2.3/css/bootstrap.min.css" rel="stylesheet">
->>>>>>> refs/remotes/origin/master
 </head>
 <body>
 	<div class="container mt-3">
 	  <h1 class="display-1 text-center">사용자 등록</h1>
-		<form>
+		<form action="Insert" method="post">
 		  <div class="mb-3 mt-3">
 		    <label for="name" class="form-label">이름:</label>
 		    <input type="text" class="form-control" id="name" placeholder="이름을 입력하세요." name="name">
@@ -42,15 +37,15 @@
 				</div>
 			  </div>
 			</div>
+			<div class="d-flex">
+			  <div class="p-2 flex-fill d-grid">
+					<button type="submit" class="btn btn-primary">생성</button> <!-- form action 을 실행하기 위한 명령 -->
+			  </div>
+			  <div class="p-2 flex-fill d-grid">
+					<a href="List" class="btn btn-primary">취소</a>
+			  </div>
+			</div>
 		</form>
-		<div class="d-flex">
-		  <div class="p-2 flex-fill d-grid">
-				<a href="Select" class="btn btn-primary">생성</a>
-		  </div>
-		  <div class="p-2 flex-fill d-grid">
-				<a href="List" class="btn btn-primary">취소</a>
-		  </div>
-		</div>
 	</div>
 </body>
 </html>

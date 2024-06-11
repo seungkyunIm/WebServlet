@@ -1,3 +1,7 @@
+<%@page import="db.DBconn"%>
+<%@page import="org.apache.ibatis.session.SqlSession"%>
+<%@page import="db.DBtable"%>
+<%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
@@ -5,22 +9,31 @@
 <meta charset="UTF-8">
 <title>사용자 정보</title>
 <link rel="icon" href="../../img/logo.png" type="image/x-icon">
-<<<<<<< HEAD
+<!-- <link href="../../lib/bootstrap@5.2.3/css/bootstrap.min.css" rel="stylesheet"> -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-=======
-<link href="../../lib/bootstrap@5.2.3/css/bootstrap.min.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/www/lib/bootstrap@5.2.3/css/bootstrap.min.css" rel="stylesheet">
->>>>>>> refs/remotes/origin/master
 </head>
 <body>
-
-<%  
-	//Object result = request.getAttribute("result");
-	String name = request.getAttribute("name").toString();
-	String email = request.getAttribute("email").toString();
-	String pwd = request.getAttribute("pwd").toString();
-	String gender = request.getAttribute("gender").toString();
-
+<%
+	/* DBtable dto = new DBtable();
+	String name = dto.getName();
+	String email = dto.getEmail();
+	String pwd = dto.getPwd();
+	String gender = dto.getGender(); */
+	
+	String name = "";
+	String email = "";
+	String pwd = "";
+	String gender = "";
+	
+	
+	Object obj = request.getAttribute("user");
+	if(obj != null){
+		HashMap<String, Object> userMap = (HashMap<String, Object>) obj;
+		name = userMap.get("name").toString();
+		email = userMap.get("email").toString();
+		pwd = userMap.get("pwd").toString();
+		gender = userMap.get("gender").toString();
+	}
 %>
 	<div class="container mt-3">
 	  <h1 class="display-1 text-center">사용자 정보</h1>
@@ -37,69 +50,49 @@
 		    <label for="pwd" class="form-label">비밀번호:</label>
 		    <input type="password" class="form-control" id="pwd" placeholder="비밀번호를 입력하세요." name="pwd" readonly="readonly" value="<%=pwd%>">
 		  </div>
-		  <%if("1".equals(gender)){ %>
+<%	if("1".equals(gender)) { %>
 			<div class="d-flex">
 			  <div class="p-2 flex-fill">
 			  	<div class="form-check">
-					<input type="radio" class="form-check-input" id="radio1" name="gender" value="1" checked>남성
+					<input type="radio" class="form-check-input" id="radio1" name="gender" value="1" readonly="readonly" checked>남성
 					<label class="form-check-label" for="radio1"></label>
 				</div>
 			  </div>
 			  <div class="p-2 flex-fill">
 			  	<div class="form-check">
-					<input type="radio" class="form-check-input" id="radio2" name="gender" value="2">여성
+					<input type="radio" class="form-check-input" id="radio2" name="gender" readonly="readonly" value="2">여성
 					<label class="form-check-label" for="radio2"></label>
 				</div>
 			  </div>
 			</div>
+<%	} else { %>
+			<div class="d-flex">
+			  <div class="p-2 flex-fill">
+			  	<div class="form-check">
+					<input type="radio" class="form-check-input" id="radio1" name="gender" value="1" >남성
+					<label class="form-check-label" for="radio1"></label>
+				</div>
+			  </div>
+			  <div class="p-2 flex-fill">
+			  	<div class="form-check">
+					<input type="radio" class="form-check-input" id="radio2" name="gender" value="2" checked>여성
+					<label class="form-check-label" for="radio2"></label>
+				</div>
+			  </div>
+			</div>
+<%	}  %>
 		</form>
 		<div class="d-flex">
 		  <div class="p-2 flex-fill d-grid">
-<<<<<<< HEAD
 		  	<a href="Update" class="btn btn-primary">수정</a>
-=======
-		  		<a href="Update" class="btn btn-primary">수정</a>
->>>>>>> refs/remotes/origin/master
 		  </div>
 		  <div class="p-2 flex-fill d-grid">
 				<a href="List" class="btn btn-primary">삭제</a>
 		  </div>
 		  <div class="p-2 flex-fill d-grid">
-<<<<<<< HEAD
-			<a href="List" class="btn btn-primary">취소</a>
-=======
 				<a href="List" class="btn btn-primary">취소</a>
->>>>>>> refs/remotes/origin/master
 		  </div>
 		</div>
-		<%} else { %>
-		<div class="d-flex">
-			  <div class="p-2 flex-fill">
-			  	<div class="form-check">
-					<input type="radio" class="form-check-input" id="radio1" name="gender" value="1" checked>남성
-					<label class="form-check-label" for="radio1"></label>
-				</div>
-			  </div>
-			  <div class="p-2 flex-fill">
-			  	<div class="form-check">
-					<input type="radio" class="form-check-input" id="radio2" name="gender" value="2">여성
-					<label class="form-check-label" for="radio2"></label>
-				</div>
-			  </div>
-			</div>
-		</form>
-		<div class="d-flex">
-		  <div class="p-2 flex-fill d-grid">
-		  	<a href="Update" class="btn btn-primary">수정</a>
-		  </div>
-		  <div class="p-2 flex-fill d-grid">
-				<a href="List" class="btn btn-primary">삭제</a>
-		  </div>
-		  <div class="p-2 flex-fill d-grid">
-			<a href="List" class="btn btn-primary">취소</a>
-		  </div>
-		</div>
-		<% }%>
 	</div>
 </body>
 </html>

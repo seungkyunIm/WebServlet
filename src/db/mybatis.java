@@ -24,6 +24,7 @@ public class mybatis extends HttpServlet {
 		SqlSession sql = DBconn.getFac().openSession();
 		int no = sql.selectOne("sql.test");
 		System.out.println("no : " + no);
+		
 	}
 
 }

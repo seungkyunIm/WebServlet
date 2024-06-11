@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+  
+  <insert id="add" parameterType="db.DBtable" >
+  	INSERT INTO user 
+  		(`name`,`email`,`pwd`, `gender`)
+	VALUE 
+		(#{name},#{email},#{pwd},#{gender})  <!-- mybatis 기법으로 #은 자료형으로 입력받은 값(따라가는 값) $는 지정값, 문자값, 변수에서 값만 가져온 값  -->
+  </insert>
+  
+  <select id="getNo" resultType="Integer">
+  		SELECT LAST_INSERT_ID() as no 
+  </select>
+  
+  <select id="findId" parameterType="String" resultType="HashMap">
+  		SELECT * FROM user WHERE NO = ${no}
+  </select>
+  
+  <update id="tbReset">
+  		ALTER TABLE user AUTO_INCREMENT = 1
+  </update>
+  
+</mapper>
